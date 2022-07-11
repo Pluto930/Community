@@ -1,0 +1,28 @@
+server:
+  port: 8848
+  servlet:
+    context-path: /community
+
+spring:
+  thymeleaf:
+    cache: false
+  datasource:
+    username: root
+    password: 846385
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/community?characterEncoding=utf8&useUnicode=true&useSSL=false&serverTimezone=Hongkong
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      maximum-pool-size: 15
+      minimum-idle: 5
+      idle-timeout: 30000
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.nowcoder.community.entity
+  configuration:
+    use-generated-keys: true
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
